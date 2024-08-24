@@ -1,0 +1,45 @@
+﻿@using web.Extensions
+@model Application.DTOs.Product.ProductDto
+@{
+    ViewData["Title"] = "Detalhe do Produto - " + Model.Name;
+}
+
+<h4 style="padding-top: 50px">@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+
+    <div class="col-md-6">
+        <dl>
+            <dt>
+                @Html.DisplayName("Fornecedor")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Supplier.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd>
+                @this.formatRealBrazil(Model.Price.Value)
+            </dd>
+
+        </dl>
+
+        <div>
+            <a  class="btn btn-dark" asp-action="Update" asp-route-id="@Model.Id">Editar</a>
+            <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
+        </div>
+    </div>
+</div>

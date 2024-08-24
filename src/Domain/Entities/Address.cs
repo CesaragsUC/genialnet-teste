@@ -1,0 +1,18 @@
+﻿using Domain.Common;
+
+namespace Domain.Entities;
+
+public class Address : BaseEntity
+{
+    public Guid SupplierId { get; set; }
+    public string? Street { get; set; }
+    public int? Number { get; set; }
+    public string? Complement { get; set; }
+    public string? PostalCode { get; set; }
+    public string? Neighborhood { get; set; }
+    public string? City { get; set; }
+    public string? State { get; set; }
+
+    /* EF Relation */
+    public Supplier Supplier { get; set; }
+}

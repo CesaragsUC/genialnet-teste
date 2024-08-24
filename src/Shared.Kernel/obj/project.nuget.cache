@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6I1c00GnVSc=",
+  "success": true,
+  "projectFilePath": "G:\\DevProjetos\\Dotnet8\\Apis\\teste-genial\\genialnet-teste\\src\\Shared.Kernel\\Shared.Kernel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cesar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

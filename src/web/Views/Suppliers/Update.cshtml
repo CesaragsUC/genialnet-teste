@@ -1,0 +1,68 @@
+﻿@using web.Extensions
+@model Application.DTOs.Supplier.SupplierDto;
+
+@{
+    ViewData["Title"] = "Editar Fornecedor";
+
+    var teste = Model;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+
+<form asp-action="Update">
+
+    <vc:Summary></vc:Summary>
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Address.Id" />
+    <input type="hidden" asp-for="CNPJ" />
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <label asp-for="CNPJ"></label>
+            <input disabled asp-for="CNPJ" class="form-control" />
+            <span asp-validation-for="CNPJ" class="text-danger"></span>
+
+
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <h4>Endereço</h4>
+    <hr />
+
+    <partial name="_AdressUpdate" />
+
+    <div class="form-group">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <a class="btn btn-dark" asp-action="Index" asp-route-id="@Model.Id">Voltar</a>
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        FindCep();
+    </script>
+
+}
+
+
