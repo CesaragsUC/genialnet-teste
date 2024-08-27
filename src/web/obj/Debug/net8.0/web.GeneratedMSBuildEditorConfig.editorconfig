@@ -54,6 +54,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/DevProjetos/Dotnet8/Apis/teste-genial/genialnet-teste/src/web/Views/SupplierProduct/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJQcm9kdWN0XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DevProjetos/Dotnet8/Apis/teste-genial/genialnet-teste/src/web/Views/SupplierProduct/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJQcm9kdWN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DevProjetos/Dotnet8/Apis/teste-genial/genialnet-teste/src/web/Views/SupplierProduct/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJQcm9kdWN0XFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/DevProjetos/Dotnet8/Apis/teste-genial/genialnet-teste/src/web/Views/Suppliers/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -9,9 +9,6 @@ public class ProductDto
     public Guid Id { get; set; }
 
     [Required]
-    public Guid SupplierId { get; set; }
-
-    [Required]
     public string? Name { get; set; }
 
     [Required]
@@ -20,10 +17,4 @@ public class ProductDto
     [Required]
     public string? Description { get; set; }
 
-    [Required]
-    public decimal? Price { get; set; }
-
-    public SupplierDto Supplier { get; set; }
-
-    public IEnumerable<SupplierDto> Suppliers { get; set; }
 }

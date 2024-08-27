@@ -11,24 +11,18 @@ namespace Application.Handlers.Commands.Products;
 
 public record CreateProductCommand : IRequest<Result<ProductDto>>
 {
-    public Guid SupplierId { get; set; }
-
     public string? Name { get; set; }
 
     public string? Brand { get; set; }
 
     public string? Description { get; set; }
 
-    public decimal? Price { get; set; }
 
     public CreateProductCommand(ProductDto product)
     {
-        SupplierId = product.SupplierId;
         Name = product.Name;
         Brand = product.Brand;
         Description = product.Description;
-        Price = product.Price;
-
 
     }
 }
@@ -46,16 +40,11 @@ public class CreateProductCommandHandler (ISupplierRespository respository, IUni
         if (!result.IsValid)
             return await Result<ProductDto>.FailureAsync(default, result.Errors.Select(x => x.ErrorMessage).ToList());
 
-        var suplier = await respository.Get(request.SupplierId);
-
         var product = new Product
         {
-            SupplierId = request.SupplierId,
             Name = request.Name,
             Brand = request.Brand,
             Description = request.Description,
-            Price = request.Price,
-            Supplier = suplier
         };
 
         await unitOfWork.Repository<Product>().AddAsync(product);

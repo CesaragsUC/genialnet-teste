@@ -10,6 +10,5 @@ public class Supplier : BaseEntity
 
     public Address Address { get; set; }
 
-    /* EF Relations */
-    public IEnumerable<Product> Products { get; set; }
+    public ICollection<SupplierProduct> SupplierProducts { get; set; }
 }

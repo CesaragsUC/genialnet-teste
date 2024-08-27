@@ -23,7 +23,7 @@ public class SupplierMapping : IEntityTypeConfiguration<Supplier>
             .WithOne(e => e.Supplier);
 
         // 1 : N => Supplier : Products
-        builder.HasMany(f => f.Products)
+        builder.HasMany(f => f.SupplierProducts)
             .WithOne(p => p.Supplier)
             .HasForeignKey(p => p.SupplierId);
 

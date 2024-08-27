@@ -14,28 +14,22 @@
     <div class="col-md-6">
         <dl>
             <dt>
-                @Html.DisplayNameFor(model => model.SupplierId)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Supplier.Name)
-            </dd>
-            <dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Name)
             </dd>
             <dt>
+                @Html.DisplayName("Marca")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Brand)
+            </dd>
+            <dt>
                 @Html.DisplayNameFor(model => model.Description)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Description)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
-            <dd>
-                @this.formatRealBrazil(Model.Price.Value)
             </dd>
         </dl>
 

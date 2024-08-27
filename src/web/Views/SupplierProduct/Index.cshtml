@@ -1,0 +1,45 @@
+﻿@using web.Extensions
+@model IEnumerable<Application.DTOs.ProductSupplier.SupplierProductDto>
+
+<vc:Summary></vc:Summary>
+
+<p>
+    <a class="btn btn-info" asp-action="Add">Novo Item</a>
+</p>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayName("Fornecedor")
+            </th>
+            <th>
+                @Html.DisplayName("Produto")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @this.formatRealBrazil(item.Price.Value)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-info" asp-controller="SupplierProduct" asp-action="Update" asp-route-id="@item.SupplierId"><spam class="fa fa-pencil-alt"></spam> </a>
+                    <a class="btn btn-danger" asp-controller="SupplierProduct" asp-action="Remove" asp-route-id="@item.SupplierId"><spam class="fa fa-trash"></spam> </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -23,17 +23,18 @@ public class ProductRepository : IProductRespository
     public async Task<Product> Get(Guid id)
     {
 
-        return await _context.Products
-                          .Include(p => p.Supplier)
-                          .SingleOrDefaultAsync(p => p.Id == id);
+        return await _context.Products.Include(p => p.SupplierProducts)
+                                        .ThenInclude(sp => sp.Supplier)
+                                        .FirstOrDefaultAsync(p => p.Id == id);
 
     }
 
     public async Task<IEnumerable<Product>> GetAll()
     {
-        return await _context.Products
-            .Include(p => p.Supplier)
-            .AsNoTracking().ToListAsync();
+        return await _context.Products.
+                                        Include(p => p.SupplierProducts)
+                                        .ThenInclude(sp => sp.Supplier)
+                                        .AsNoTracking().ToListAsync();
     }
 
     public async Task Remove(Product product)

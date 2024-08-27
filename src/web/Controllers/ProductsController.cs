@@ -1,12 +1,8 @@
 using Application.DTOs.Product;
-using Application.DTOs.Supplier;
 using Application.Handlers.Commands.Products;
-using Application.Handlers.Commands.Supplier;
 using Application.Handlers.Commands.Suppliers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Shared.Kernel;
 
 namespace web.Controllers
 {
@@ -21,11 +17,7 @@ namespace web.Controllers
         }
         public async Task<IActionResult> Add()
         {
-            var suppliers = await mediator.Send(new GetAllSupplierQuery());
-
-            var model = new ProductDto { Suppliers = suppliers.Data };
-
-            return View(model);
+            return View();
         }
 
         [HttpPost]

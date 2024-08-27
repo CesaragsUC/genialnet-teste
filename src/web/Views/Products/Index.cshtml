@@ -19,12 +19,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Brand)
             </th>
-            <th>
-                @Html.DisplayName("Fornecedor")
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -37,12 +31,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Brand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Supplier.Name)
-                </td>
-                <td>
-                    @this.formatRealBrazil(item.Price.Value)
                 </td>
                 <td class="text-right">
                     <a class="btn btn-warning" asp-controller="Products" asp-action="Details" asp-route-id="@item.Id"><spam class="fa fa-search"></spam> </a>

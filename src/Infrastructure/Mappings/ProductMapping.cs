@@ -14,13 +14,15 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
             .IsRequired()
             .HasColumnType("varchar(100)");
 
+        builder.Property(p => p.Brand)
+            .IsRequired()
+            .HasColumnType("varchar(100)");
+
         builder.Property(p => p.Description)
             .IsRequired()
             .HasColumnType("varchar(1000)");
 
-        builder.Property(p => p.Price)
-            .IsRequired()
-            .HasColumnType("decimal(10,2)");
+
 
         builder.ToTable("Products");
     }

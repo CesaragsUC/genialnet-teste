@@ -25,7 +25,8 @@ public static class ServiceCollectionExtensions
             .AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork))
             .AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>))
             .AddScoped<ISupplierRespository, SupplierRespository>()
-            .AddScoped<IProductRespository, ProductRepository>();
+            .AddScoped<IProductRespository, ProductRepository>()
+            .AddScoped<ISupplierProductRespository, SupplierProductRepository>();
 
     }
 }

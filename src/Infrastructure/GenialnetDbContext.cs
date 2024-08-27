@@ -11,7 +11,7 @@ namespace Infrastructure
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Address> Address { get; set; }
-
+        public DbSet<SupplierProduct> SupplierProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

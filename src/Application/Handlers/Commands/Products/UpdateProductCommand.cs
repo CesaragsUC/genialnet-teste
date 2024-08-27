@@ -29,11 +29,9 @@ public record UpdateProductCommand : IRequest<Result<ProductDto>>
     public UpdateProductCommand(ProductDto product)
     {
         Id = product.Id;
-        SupplierId = product.SupplierId;
         Name = product.Name;
         Brand = product.Brand;
         Description = product.Description;
-        Price = product.Price;
 
     }
 }
@@ -57,12 +55,9 @@ public class UpdateProductCommandHandler(IProductRespository repository,
         var product = new Product
         {
             Id = request.Id,
-            SupplierId = request.SupplierId,
             Name = request.Name,
             Brand = request.Brand,
             Description = request.Description,
-            Price = request.Price,
-            Supplier = suplier
         };
 
         await unitOfWork.Repository<Product>().UpdateAsync(product);
